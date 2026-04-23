@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pii-parser"
+version = "0.1.0"
+description = "Lightweight pattern-based PII parser compatible with the OpenAI Privacy Filter (opf) output schema."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "pii-parser contributors" }]
+keywords = ["pii", "privacy", "ner", "redaction", "parser"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+[project.scripts]
+pii-parser = "pii_parser.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pii_parser*"]
